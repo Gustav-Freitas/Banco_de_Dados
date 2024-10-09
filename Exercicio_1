@@ -1,0 +1,77 @@
+// Exercícios de Banco de Dados
+
+-- 1 - Selecione: nome, sobrenome, cidade e estado de todos os autores que não são da Califórnia.
+
+select * from authors;
+
+select au_lname, au_fname, city, state
+
+from authors
+
+where not state = 'CA';
+ 
+-- 2 - Selecione todos os dados de todos os autores que vivem em uma cidade que começa com S.
+
+select * from authors;
+
+select *
+
+from authors
+
+where city like 'S%';
+ 
+-- 3 - Selecione o titulo, preço e tipo de todos os livros com preço entre 12 e 19.
+
+select * from titles;
+
+select title, price, type
+
+from titles
+
+where price >= 12 AND price <= 19;
+ 
+-- 4 - Selecione todos os livros que faturaram menos de 10000 no ano.
+
+select * from titles;
+
+select * from titles
+
+where ytd_sales * price <= 10000;
+ 
+-- 5 - Selecione todos os livros que não contem a letra A em seu título.
+
+select * 
+
+from titles
+
+where title NOT like '%A%';
+ 
+-- 6 - Selecione todas as editoras que não são dos EUA.
+
+select *
+
+from publishers
+
+where pub_name NOT LIKE '%USA%'
+
+--7 - Selecione o código da categoria "Flame".
+select *
+from Categoria
+where nmCategoria = 'Flame'
+ 
+--8 - Selecione todos os pokemons desta categoria de acordo com o código descoberto no exercício anterior.
+select *
+from Pokemon
+where codCategoria = 121
+ 
+ 
+--9 - Selecione todos os pokemons que tem altura maior que 2 metros e peso menor que 100kg.
+select *
+from Pokemon
+where altura > 2.00 AND peso < 100.00
+ 
+--10 - Selecione todos os pokemons que não evoluem de nenhum outro.
+select *
+from Pokemon 
+where evoluiDe IS NULL
+// FIM
