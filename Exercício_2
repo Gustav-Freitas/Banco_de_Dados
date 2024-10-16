@@ -1,0 +1,44 @@
+--1 - Qual o peso do pokemon mais pesado?
+--SABER O PESO DO POKEMON MAIS PESADO
+--select max(peso) as nome
+--from Pokemon
+select nome
+from Pokemon
+where peso = '460'
+
+--2 - Quantos tipos de pokemons temos cadastrados?
+select count(*) 
+from Tipo
+
+--3 - Quantos pokemons tem menos de 10 Kg?
+select count(nome)
+from Pokemon
+where peso < 10.00
+
+--4 - Qual a altura média dos pokemons da categoria 160?
+select *
+from Pokemon
+where codCategoria = 160
+
+--5 - Qual a altura do pokemon mais baixo?
+select *
+from Pokemon
+where altura <= 0.20
+
+--6 - Liste todos os pokemons e o cáculo do seu IMC começando pelo maior.
+select nome, power(peso, altura)
+from Pokemon
+Order by nome DESC;
+
+
+
+--7 - Qual o peso médio e a altura média de cada categoria de pokemon? (exibindo o código da categoria)
+-- NÃO RESOLVIDO
+select avg(peso)
+from Pokemon
+
+select avg(altura)
+from Pokemon
+
+select *
+from Pokemon
