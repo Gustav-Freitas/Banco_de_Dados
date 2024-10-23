@@ -1,0 +1,32 @@
+-- 1 - Utilize as tabelas Employee e Jobs e exiba cada empregado com seu respectivo cargo
+select * FROM JOBS, EMPLOYEE
+
+select fname, lname, job_desc
+from employee as e inner join jobs as j
+on e.job_id = j.job_id
+
+-- 2 - Utilize as tabelas Publishers e Employee, e exiba cada editora com seus respectivos funcionários.
+select * FROM PUBLISHERS, EMPLOYEE
+
+select pub_name, fname, lname
+from publishers as p inner join employee as e
+on p.pub_id = e.pub_id
+
+-- 3 - Exiba uma lista com os cargos, e a quantidade de funcionários de cada cargo.
+select * From jobs, employee
+
+select job_desc as Cargos, count(*) as 'Quantidade'
+from jobs as j inner join employee as e 
+on j.job_id = e.job_id
+group by j.job_desc
+
+-- 4 - Exiba a quantidade de livros publicados por cada editora.
+-- NÃO FINALIZADO
+select * From publishers, titles
+
+select title, p.pub_id, pub_name
+from publishers as p inner join titles as t
+on p.pub_id = t.title_id
+
+
+-- 5 - Exiba o nome das editoras que possuem um funcionário "Designer" contratado em 1990
